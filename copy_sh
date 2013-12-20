@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cp -R DEPENDANCIES/data dist
+cp -R DEPENDANCIES/logs dist
+cp DEPENDANCIES/ddns.conf dist
+chmod -R 777 dist
+dos2unix dist/ddns.conf
+dos2unix dist/data/*
+echo "Starting Dynamic DNS Client in GUI mode....";
+java -jar dist/Dynamic_DNS_Client.jar --gui
+
